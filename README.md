@@ -10,7 +10,7 @@ It reports with **voice**(chose any language you like).
 
 ```
         en                                                        zh-cn
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 say hello                                                         开机问候
 network checker                                                   网络连接检查 
 go-agent launcher                                                 go-agent 代理启动
@@ -34,7 +34,7 @@ When os runs at startup, launch two LaunchAgent program through two plist files:
 1. com.yanghua.vinoForAgent - vino deamon server
 2. com.yanghua.launchVinoForAgent - startup automatic services launcher
 
-what's more, [***vino deamon server***] is a http-server built with **node.js**. And [***startup automatic services launcher***] is a shell script sends some services' http-get request to vino for launching these services deamon. 
+what's more, ***vino deamon server*** is a http-server built with **node.js**. And ***startup automatic services launcher*** is a shell script sends some services' http-get request to vino for launching these services deamon. 
 
 On the other hand, not all services are started as deamon when os run as startup, you also have a choice to start a service when os is running! The way of launching is very simple by opening your web broser then sending a service's url that you want to start.
 
