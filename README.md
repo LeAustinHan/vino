@@ -9,7 +9,7 @@ It reports with **voice**(chose any language you like).
 
 
 ```
-     en                                                        zh-cn
+     en                                                            zh-cn
 ---------------------------------------------------------------------------------------
 say hello                                                         开机问候
 network checker                                                   网络连接检查 
