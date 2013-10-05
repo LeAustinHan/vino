@@ -16,7 +16,7 @@ handle["/weather"]       = requestHandlers.weather;
 handle["/memoryMonitor"] = requestHandlers.memoryMonitor;
 handle["/cpuMonitor"]    = requestHandlers.cpuMonitor;
 handle["/timekeeping"]   = requestHandlers.timekeeping;
-handle["/network"]  = requestHandlers.network;
+handle["/network"]       = requestHandlers.network;
 handle["/battery"]       = requestHandlers.battery;
 handle["/trashClear"]    = requestHandlers.trashClear;
 
