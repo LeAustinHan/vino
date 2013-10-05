@@ -51,7 +51,7 @@ to do
 * finish install script
 
 ## contact & more details
-desc:see [My Blog](#)
+desc:see [My Blog](http://blog.csdn.net/yanghua_kobe/article/details/12312383)
 
 any problem, let me know:
 
