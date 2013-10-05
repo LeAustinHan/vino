@@ -1,7 +1,7 @@
 
 var exec         = require("child_process").exec;
 var shellCmdList = require("./shellCmd").getShellCmdList();
-var url  =require('url');
+var url          = require('url');
 var queryString  = require("querystring");
 
 function root (request, response){
