@@ -42,3 +42,18 @@ On the other hand, not all services are started as deamon when os run as startup
 ## to do
 * configurable speak words
 * configurable some warning-benchmark
+* finish install script
+
+## contact & more details
+desc:see [My Blog](#)
+
+any problem, let me know:
+
+1. [yanghua1127@gmail.com](mailto:yanghua1127@gmail.com)
+2. [http://blog.csdn.net/yanghua_kobe](http://blog.csdn.net/yanghua_kobe)
+enjoy and have fun!
+
+
+
+
+
