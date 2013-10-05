@@ -24,6 +24,7 @@ timing shutdown                                                   定时关机
 weather forecast                                                  天气预报
 stock monitor                                                     股票异常警告
 timekeeping                                                       整点报时
+trashClear                                                        垃圾箱过载自动清理
 ……… 【depends on your imagination】                               【…天空才是极限】
 ```
 
@@ -38,4 +39,6 @@ what's more, ***vino deamon server*** is a http-server built with **node.js**. A
 
 On the other hand, not all services are started as deamon when os run as startup, you also have a choice to start a service when os is running! The way of launching is very simple by opening your web broser then sending a service's url that you want to start.
 
-
+## to do
+* configurable speak words
+* configurable some warning-benchmark
