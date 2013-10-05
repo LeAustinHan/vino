@@ -15,9 +15,9 @@ function getShellCmdList () {
         "memoryMonitor"     : "sh " + shellDirPath + "/service/memoryMonitor.sh",
         "cpuMonitor"        : "sh " + shellDirPath + "/service/cpuMonitor.sh",
         "timekeeping"       : "sh " + shellDirPath + "/service/timeKeeping.sh",
-        "network"      : "sh " + shellDirPath + "/service/network.sh",
+        "network"           : "sh " + shellDirPath + "/service/network.sh",
         "battery"           : "sh " + shellDirPath + "/service/battery.sh",
-        "trashClear"           : "sh " + shellDirPath + "/service/trashClear.sh",
+        "trashClear"        : "sh " + shellDirPath + "/service/trashClear.sh",
     };
 
     return shellCmdList;
