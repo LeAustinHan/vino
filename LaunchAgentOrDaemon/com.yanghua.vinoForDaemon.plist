@@ -6,7 +6,7 @@
     <string>com.yanghua.vino.plist</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/local/customizeService/weatherVoiceReportor.sh</string>
+        <string>/usr/local/vino/node/index.js</string>
     </array>
     <key>KeepAlive</key>
     <false/>
