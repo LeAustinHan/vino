@@ -39,6 +39,12 @@ what's more, ***vino deamon server*** is a http-server built with **node.js**. A
 
 On the other hand, not all services are started as deamon when os run as startup, you also have a choice to start a service when os is running! The way of launching is very simple by opening your web broser then sending a service's url that you want to start.
 
+## install
+
+```
+to do
+```
+
 ## to do
 * configurable speak words
 * configurable some warning-benchmark
