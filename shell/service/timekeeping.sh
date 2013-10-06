@@ -4,6 +4,8 @@ rootDir=$(cd "$(dirname "$0")/.."; pwd)
 . $rootDir/utility.sh
 
 declare -a FLAG_ARR
+#identify whether over a day or not
+OVERDAY=false
 
 function flagInit (){
     for (( i = 0; i < 24; i++ )); do
@@ -29,6 +31,22 @@ function timeKeeping (){
         #when occur at 23:59 the 24 is wrong ,the right is 0
         if [[ $TMP -eq 24 ]]; then
             TMP=0
+            #if 0 a new day , so re-init
+            flagInit
+            OVERDAY=true
+        fi
+
+        #when hour is zero but OVERDAY is false 
+        #(when sleep great then 60s , may be not hit 23:59)
+        if [[ $TMP -eq 0 ]] && [[ ! &OVERDAY ]]; then
+            #if 0 a new day , so re-init
+            flagInit
+            OVERDAY=true
+        fi
+
+        #reset OVERDAY=false
+        if [[ $TMP -ne 0 ]]; then
+            OVERDAY=false
         fi
 
         #when run as deamon , if has be reported then do nothing
@@ -37,11 +55,6 @@ function timeKeeping (){
             FLAG_ARR[$TMP]=0
         fi
 
-        #if 0 a new day , so re-init
-        if [[ $TMP -eq 0 ]]; then
-            speak "Now, "$TMP$" o'clock. A new day!"
-            flagInit
-        fi
     fi
 }
 
