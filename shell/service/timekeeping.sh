@@ -73,6 +73,7 @@ flagInit
 
 
 if [[ $# -eq 0 ]]; then
+    speak 'timeKeeping'
     timeKeeping
     exit 0
 fi
