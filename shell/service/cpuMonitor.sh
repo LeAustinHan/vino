@@ -3,7 +3,7 @@
 rootDir=$(cd "$(dirname "$0")/.."; pwd)
 . $rootDir/utility.sh
 
-WARNNING_PERCENT=40
+WARNNING_PERCENT=30
 CPU_OVER="1"
 
 function monitor (){
