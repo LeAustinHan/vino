@@ -7,6 +7,8 @@ WARNING_PERCENT=20.0
 WARNING_OVER="1"
 CONNECTED=""
 CONNECTED_TMP=""
+POWER_PERCENT=""
+POWER_FULL=98.0
 
 function monitor (){
     CONNECTED=`system_profiler SPPowerDataType | grep Connected: | awk '{print $2}'`
@@ -28,7 +30,13 @@ function monitor_deamon (){
             if [[ $CONNECTED = 'No' ]]; then
                 speak "AC Power disconnected!"
             else
-                speak "AC Power connected! Battery is Charging now!"
+                speak "AC Power connected! "
+                CHARGING_FLAG=$(echo "$POWER_PERCENT <= $POWER_FULL" | bc)
+
+                #if battery is charging!
+                if [[ $CHARGING_FLAG = "1" ]]; then
+                    speak "Now, Battery is Charging!"
+                fi
             fi
 
             CONNECTED_TMP=$CONNECTED
