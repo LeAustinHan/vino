@@ -23,4 +23,9 @@ proxy_on(){
     python $GOAGENT_PATH
 }
 
-proxy_on
+#block until network is connected!
+ONLINE=`blockedNetworkCheck | awk '{print $1}'`
+
+if [[ $ONLINE -eq 0 ]]; then
+    proxy_on
+fi
