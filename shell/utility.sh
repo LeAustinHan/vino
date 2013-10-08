@@ -54,3 +54,23 @@ function networkCheck() {
         echo 0
     }
 }
+
+function blockedNetworkCheck() {
+    while [[ true ]]; do
+        PINGRET=$( ping -c 4 8.8.8.8  | grep "ttl=" )
+ 
+        [ -z "$PINGRET" ] &&
+        {
+            PINGRET=$( ping -c 4 8.8.4.4  | grep "ttl=" )
+         
+            [ -z "$PINGRET"  ] &&
+            {
+                sleep 60
+            }
+        }||
+        {
+            echo 0
+            break                   #exit
+        }
+    done
+}
