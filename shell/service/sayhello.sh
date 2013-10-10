@@ -6,10 +6,10 @@ rootDir=$(cd "$(dirname "$0")/.."; pwd)
 HOUR=`date +%H`
 TMP=''
 
-if [[ $HOUR -lt 12 ]]; then
+if [ $HOUR -lt 12 ]; then
     TMP="Good morning"
 
-elif [[ $HOUR -gt 18 ]]; then
+elif [ $HOUR -gt 18 ]; then
     TMP="Good evening"
 
 else 

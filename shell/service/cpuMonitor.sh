@@ -25,7 +25,7 @@ function monitor (){
     CPU_FLAG=$(echo "$IDEL_C_AVG <= $WARNNING_PERCENT" | bc)
     echo $CPU_FLAG
 
-    if [[ $CPU_FLAG = $CPU_OVER ]]; then
+    if [ $CPU_FLAG = $CPU_OVER ]; then
         speak "c p u warnning!"
         speak "now idel is "
         speak $IDEL_C_AVG"%"
@@ -34,7 +34,7 @@ function monitor (){
 }
 
 function monitor_deamon (){
-    while [[ true ]]; do
+    while [ true ]; do
         
         monitor
 
@@ -44,7 +44,8 @@ function monitor_deamon (){
 }
 
 
-if [[ $# -eq 0 ]]; then
+if [ $# -eq 0 ]; then
+    speak "cpu monitor started!"
     monitor
     exit 0
 fi

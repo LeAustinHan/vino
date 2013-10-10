@@ -13,7 +13,7 @@ function monitor (){
     TOTAL_SIZE=`du -sh ~/.Trash | awk '{print $1}'`
 
     #if the unit is equal
-    if [[ ${TOTAL_SIZE:0-1:1} = ${WARNING_SIZE:0-1:1} ]]; then
+    if [ ${TOTAL_SIZE:0-1:1} = ${WARNING_SIZE:0-1:1} ]; then
 
         STR_LEN=${#TOTAL_SIZE}
         TOTAL_SIZE_NUM=${TOTAL_SIZE:0:STR_LEN-1}
@@ -22,7 +22,7 @@ function monitor (){
         
         TRASH_FLAG=$(echo "$TOTAL_SIZE_NUM >= $WARNING_SIZE_NUM " | bc)
 
-        if [[ $TRASH_FLAG = $WARNING_OVER ]]; then
+        if [ $TRASH_FLAG = $WARNING_OVER ]; then
             speak "the trash total size over warning size. Clearing!!!"
             rm -rf ~/.Trash/*
         fi
@@ -31,7 +31,7 @@ function monitor (){
 }
 
 function monitor_deamon (){
-    while [[ true ]]; do
+    while [ true ]; do
         
         monitor
 
@@ -42,7 +42,7 @@ function monitor_deamon (){
 
 
 
-if [[ $# -eq 0 ]]; then
+if [ $# -eq 0 ]; then
     speak "trash checking!"
     monitor
     exit 0

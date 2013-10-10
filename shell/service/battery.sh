@@ -22,19 +22,19 @@ function monitor (){
 }
 
 function monitor_deamon (){
-    while [[ true ]]; do
+    while [ true ]; do
 
         monitor
 
-        if [[ $CONNECTED != $CONNECTED_TMP ]]; then
-            if [[ $CONNECTED = 'No' ]]; then
+        if [ $CONNECTED != $CONNECTED_TMP ]; then
+            if [ $CONNECTED = 'No' ]; then
                 speak "AC Power disconnected!"
             else
                 speak "AC Power connected! "
                 CHARGING_FLAG=$(echo "$POWER_PERCENT <= $POWER_FULL" | bc)
 
                 #if battery is charging!
-                if [[ $CHARGING_FLAG = "1" ]]; then
+                if [ $CHARGING_FLAG = "1" ]; then
                     speak "Now, Battery is Charging!"
                 fi
             fi
@@ -47,7 +47,7 @@ function monitor_deamon (){
 }
 
 
-if [[ $# -eq 0 ]]; then
+if [ $# -eq 0 ]; then
     speak "battery checking!"
     monitor
     exit 0

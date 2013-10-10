@@ -16,7 +16,7 @@ function monitor (){
 
     MEM_FLAG=$(echo "$USED_PERCENT >= $WARNNING_PERCENT" | bc)
     
-    if [[ $MEM_FLAG = $MEM_OVER ]]; then
+    if [ $MEM_FLAG = $MEM_OVER ]; then
         speak "memory warnning! Now, clearing memory..."
         purge
         speak "memory cleared"
@@ -24,7 +24,7 @@ function monitor (){
 }
 
 function monitor_deamon (){
-    while [[ true ]]; do
+    while [ true ]; do
         
         monitor
 
@@ -34,7 +34,7 @@ function monitor_deamon (){
 }
 
 
-if [[ $# -eq 0 ]]; then
+if [ $# -eq 0 ]; then
     monitor
     exit 0
 fi
