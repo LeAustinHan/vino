@@ -38,7 +38,7 @@ function closeSpeakSwitch (){
     SPEAKSWITCH=false
 }
 
-function networkCheck() {
+function networkCheck () {
     PINGRET=$( ping -c 4 8.8.8.8  | grep "ttl=" )
  
     [ -z "$PINGRET" ] &&

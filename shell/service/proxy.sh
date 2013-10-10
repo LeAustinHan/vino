@@ -24,8 +24,6 @@ proxy_on(){
 }
 
 #block until network is connected!
-ONLINE=`blockedNetworkCheck | awk '{print $1}'`
+blockedNetworkCheck
 
-if [ $ONLINE -eq 0 ]; then
-    proxy_on
-fi
+proxy_on
