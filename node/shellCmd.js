@@ -18,6 +18,7 @@ function getShellCmdList () {
         "network"           : "sh " + shellDirPath + "/service/network.sh",
         "battery"           : "sh " + shellDirPath + "/service/battery.sh",
         "trashClear"        : "sh " + shellDirPath + "/service/trashClear.sh",
+        "homeBrewUpdater"   : "sh " + shellDirPath + "/service/homeBrewUpdater.sh",
     };
 
     return shellCmdList;

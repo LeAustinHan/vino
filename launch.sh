@@ -44,5 +44,8 @@ curl http://localhost:9876/battery?opt=d                #opt:d run as deamon
 sleep 10
 curl http://localhost:9876/trashClear?opt=d             #opt:d run as deamon
 
+sleep 10
+curl http://localhost:9876/homeBrewUpdater
+
 
 

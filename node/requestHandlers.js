@@ -213,6 +213,26 @@ function trashClear (request, response) {
     response.end();
 }
 
+function homeBrewUpdater (request, response) {
+    var paramObj=queryString.parse(url.parse(request.url).query);
+    var cmd=shellCmdList["homeBrewUpdater"];
+
+    if (typeof paramObj !="undefined" 
+        && 
+        typeof paramObj.opt != "undefined" 
+        && 
+        paramObj.opt=="d") {
+        cmd+=" -d";
+    };
+
+    exec(cmd, function(error, stdout, stderr){
+        logExecInfo("homeBrewUpdater", error, stdout, stderr);
+    })
+
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end();
+}
+
 
 
 /**
@@ -239,17 +259,18 @@ function logExecInfo (funcName, err, stdout, stderr) {
 }
 
 
-exports.root          = root; 
-exports.sayhello      = sayhello;
-exports.helloworld    = helloworld;
-exports.ls            = ls;
-exports.proxy_on      = proxy_on;
-exports.proxy_off     = proxy_off;
-exports.closeServer   = closeServer;
-exports.weather       = weather;
-exports.memoryMonitor = memoryMonitor;
-exports.cpuMonitor    = cpuMonitor;
-exports.timekeeping   = timekeeping;
-exports.network       = network;
-exports.battery       = battery;
-exports.trashClear    = trashClear;
+exports.root            = root; 
+exports.sayhello        = sayhello;
+exports.helloworld      = helloworld;
+exports.ls              = ls;
+exports.proxy_on        = proxy_on;
+exports.proxy_off       = proxy_off;
+exports.closeServer     = closeServer;
+exports.weather         = weather;
+exports.memoryMonitor   = memoryMonitor;
+exports.cpuMonitor      = cpuMonitor;
+exports.timekeeping     = timekeeping;
+exports.network         = network;
+exports.battery         = battery;
+exports.trashClear      = trashClear;
+exports.homeBrewUpdater = homeBrewUpdater;
