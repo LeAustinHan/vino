@@ -25,6 +25,7 @@ weather forecast                                                  天气预报
 stock monitor                                                     股票异常警告
 timekeeping                                                       整点报时
 trashClear                                                        垃圾箱过载自动清理
+NBAGameReminders（TODO）                                           nba直播预告
 ……… 【depends on your imagination】                               【…天空才是极限】
 ```
 
