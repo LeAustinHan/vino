@@ -7,7 +7,7 @@ rootDir=$(cd "$(dirname "$0")/.."; pwd)
 function checkNetwork() {
     ONLINE=`networkCheck | awk '{print $1}'`
 
-    if [ $ONLINE -eq 1 ]; then
+    if [[ $ONLINE -eq 1 ]]; then
         speak "disconnect network"
     fi
 }
@@ -23,7 +23,7 @@ function checkNetwork_deamon() {
 }
 
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     
     checkNetwork
 

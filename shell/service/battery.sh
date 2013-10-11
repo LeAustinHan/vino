@@ -26,8 +26,8 @@ function monitor_deamon (){
 
         monitor
 
-        if [ $CONNECTED != $CONNECTED_TMP ]; then
-            if [ $CONNECTED = 'No' ]; then
+        if [[ $CONNECTED != $CONNECTED_TMP ]]; then
+            if [[ $CONNECTED = 'No' ]]; then
                 speak "AC Power disconnected!"
             else
                 speak "AC Power connected! "
@@ -47,7 +47,7 @@ function monitor_deamon (){
 }
 
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     speak "battery checking!"
     monitor
     exit 0

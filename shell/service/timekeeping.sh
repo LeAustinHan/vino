@@ -20,16 +20,16 @@ function timeKeeping (){
     TMP=''
 
     #when occur at XX:01 XX:59 XX:00
-    if [ $MINUTE -eq 1 ] || [ $MINUTE -eq 59 ] || [ $MINUTE -eq 0 ]; then
+    if [[ $MINUTE -eq 1 ]] || [[ $MINUTE -eq 59 ]] || [[ $MINUTE -eq 0 ]]; then
         # last hour , so need add one clock
-        if [ $MINUTE -eq 59 ]; then
+        if [[ $MINUTE -eq 59 ]]; then
             TMP=$(echo $HOUR+1 | bc)
         else
             TMP=$HOUR
         fi
 
         #when occur at 23:59 the 24 is wrong ,the right is 0
-        if [ $TMP -eq 24 ]; then
+        if [[ $TMP -eq 24 ]]; then
             TMP=0
             #if 0 a new day , so re-init
             flagInit
@@ -38,7 +38,7 @@ function timeKeeping (){
 
         #when hour is zero but OVERDAY is false 
         #(when sleep great then 60s , may be not hit 23:59)
-        if [ $TMP -eq 0 ] && [ ! $OVERDAY ]; then
+        if [[ $TMP -eq 0 ]] && [[ ! $OVERDAY ]]; then
             #if 0 a new day , so re-init
             flagInit
             OVERDAY=true
@@ -50,7 +50,7 @@ function timeKeeping (){
         fi
 
         #when run as deamon , if has be reported then do nothing
-        if [ ${FLAG_ARR[$TMP]} -eq 1 ]; then
+        if [[ ${FLAG_ARR[$TMP]} -eq 1 ]]; then
             speak "Now, "$TMP$" o'clock"
             FLAG_ARR[$TMP]=0
         fi
@@ -72,7 +72,7 @@ function timeKeeping_deamon (){
 flagInit
 
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     speak 'timeKeeping'
     timeKeeping
     exit 0

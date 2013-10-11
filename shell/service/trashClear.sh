@@ -42,7 +42,7 @@ function monitor_deamon (){
 
 
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     speak "trash checking!"
     monitor
     exit 0

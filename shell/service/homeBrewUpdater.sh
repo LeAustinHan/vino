@@ -3,7 +3,7 @@
 #block until network is connected!
 blockedNetworkCheck
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     speak "home brew updater started!"
 
     brew update
