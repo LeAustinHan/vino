@@ -8,6 +8,9 @@
 # http://www.cbssports.com/nba/eye-on-basketball/23041832/nba-releases-20132014-nba-schedule
 # 
 # just one statement for each line！
+# 
+
+rootDir=$(cd "$(dirname "$0")/.."; pwd)
  
 while read line
 do
@@ -171,6 +174,6 @@ do
                         }else{
                             print $0
                         }
-                      }'  >> nba_2013_to_2014_schedule.md
-done < /Users/yanghua/Desktop/nba_schedule_source.txt
+                      }'  >> $rootDir/nba_2013_to_2014_schedule.md
+done < $rootDir/nba_schedule_source.txt
 
