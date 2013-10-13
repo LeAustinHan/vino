@@ -7,7 +7,7 @@
 # generated from :
 # http://www.cbssports.com/nba/eye-on-basketball/23041832/nba-releases-20132014-nba-schedule
 # 
-# just one statement！
+# just one statement for each line！
  
 while read line
 do
