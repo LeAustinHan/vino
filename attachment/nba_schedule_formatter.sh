@@ -174,10 +174,3 @@ do
                       }'  >> nba_2013_to_2014_schedule.md
 done < /Users/yanghua/Desktop/nba_schedule_source.txt
 
-
-
-# while read line
-# do
-#     echo $line | awk '{print $7}'
-
-# done < /Users/yanghua/Desktop/123.txt
