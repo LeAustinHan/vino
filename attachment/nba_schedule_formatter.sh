@@ -1,4 +1,13 @@
 #!/bin/bash
+# -*- coding:utf-8 -*-
+# Created by:yanghua
+# Date      :2013-10-13
+# 
+# Usage     : sh nba_schedule_formatter.sh
+# generated from :
+# http://www.cbssports.com/nba/eye-on-basketball/23041832/nba-releases-20132014-nba-schedule
+# 
+# just one statement！
  
 while read line
 do

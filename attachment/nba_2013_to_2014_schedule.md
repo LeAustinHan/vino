@@ -1,3 +1,5 @@
+>generated from:[nba-releases-20132014-nba-schedule](http://www.cbssports.com/nba/eye-on-basketball/23041832/nba-releases-20132014-nba-schedule)
+
 ```
 DATE					AWAY				HOME				LOCAL TIME		EST
 OCTOBER 2013
