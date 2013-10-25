@@ -36,7 +36,7 @@ sleep 10
 curl http://localhost:9876/timekeeping?opt=d            #opt:d run as deamon
 
 sleep 10
-curl http://localhost:9876/checkNetwork?opt=d           #opt:d run as deamon
+curl http://localhost:9876/network?opt=d           #opt:d run as deamon
 
 sleep 10
 curl http://localhost:9876/battery?opt=d                #opt:d run as deamon
