@@ -18,7 +18,7 @@ while true; do
 
 done
 
-curl http://localhost:9876/sayHello
+curl http://localhost:9876/sayhello
 
 sleep 10
 curl http://localhost:9876/proxy_on
