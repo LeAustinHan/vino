@@ -10,9 +10,8 @@ blockedNetworkCheck
 if [[ $# -eq 0 ]]; then
     speak "home brew updater started!"
 
-    brew update
-    sleep 30
-    brew upgrade
+    eval `which brew`" ""update" && sleep 30 && eval `which brew`" ""upgrade"
+    
 fi
 
     
