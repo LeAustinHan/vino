@@ -8,11 +8,14 @@ MEM_OVER="1"
 
 function monitor (){
     ALL_MEM_INFO=$(top -l 1 | grep PhysMem: | awk '{print $0}')    
-    USED_M=$(echo "$ALL_MEM_INFO" | awk '{print $8}' | cut -f 1 -d M)
-    FREE_M=$(echo "$ALL_MEM_INFO" | awk '{print $10}' | cut -f 1 -d M)
-    TOTAL_M=$((USED_M+FREE_M))
+    USED_M=$(echo "$ALL_MEM_INFO" | awk '{print $2}' | cut -f 1 -d M)
+    WIRED_M=$(echo "$ALL_MEM_INFO" | awk '{print $4}' | cut -f 2 -d \( | cut -f 1 -d M)
+    FREE_M=$(echo "$ALL_MEM_INFO" | awk '{print $6}' | cut -f 1 -d M)
 
-    USED_PERCENT=`echo "scale=2;$USED_M/$TOTAL_M" | bc`
+    TOTAL_USED=$((USED_M+WIRED_M))
+    TOTAL_M=$((TOTAL_USED+FREE_M))
+
+    USED_PERCENT=`echo "scale=2;$TOTAL_USED/$TOTAL_M" | bc`
 
     MEM_FLAG=$(echo "$USED_PERCENT >= $WARNNING_PERCENT" | bc)
     
