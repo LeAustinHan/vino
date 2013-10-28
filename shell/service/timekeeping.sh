@@ -28,6 +28,10 @@ function timeKeeping (){
             TMP=$HOUR
         fi
 
+        #fix a bug when hour is less then 10, it's value is '09' 
+        #It will be treat as octal
+        TMP=$((10#$TMP))
+
         #when occur at 23:59 the 24 is wrong ,the right is 0
         if [[ $TMP -eq 24 ]]; then
             TMP=0
