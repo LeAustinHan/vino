@@ -13,7 +13,7 @@ DAY=`date -j -v -1d | awk '{print $3}'`
 
 HANDLING_LINE=''
 
-MATCHING_TEAM='L.A. Lakers'             #focus Los angle's Lakers
+MATCHING_TEAM='L.A. Lakers'             #focus Los angel's Lakers
 
 #if true open on live web site
 OPEN_WEBSITE=true
