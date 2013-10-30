@@ -233,6 +233,26 @@ function homeBrewUpdater (request, response) {
     response.end();
 }
 
+function nbaForecast(request, response) {
+    var paramObj=queryString.parse(url.parse(request.url).query);
+    var cmd=shellCmdList["nbaForecast"];
+
+    if (typeof paramObj !="undefined" 
+        && 
+        typeof paramObj.opt != "undefined" 
+        && 
+        paramObj.opt=="d") {
+        cmd+=" -d";
+    };
+
+    exec(cmd, function(error, stdout, stderr){
+        logExecInfo("nbaForecast", error, stdout, stderr);
+    })
+
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end();
+}
+
 
 
 /**
@@ -274,3 +294,4 @@ exports.network         = network;
 exports.battery         = battery;
 exports.trashClear      = trashClear;
 exports.homeBrewUpdater = homeBrewUpdater;
+exports.nbaForecast     = nbaForecast;

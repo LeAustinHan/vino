@@ -20,5 +20,6 @@ handle["/network"]         = requestHandlers.network;
 handle["/battery"]         = requestHandlers.battery;
 handle["/trashClear"]      = requestHandlers.trashClear;
 handle["/homeBrewUpdater"] = requestHandlers.homeBrewUpdater;
+handle["/nbaForecast"]     = requestHandlers.nbaForecast;
 
 server.start(router.route, handle);
