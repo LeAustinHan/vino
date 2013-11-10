@@ -3,7 +3,7 @@
 rootDir=$(cd "$(dirname "$0")/.."; pwd)
 . $rootDir/utility.sh
 
-WARNNING_PERCENT=0.80
+WARNNING_PERCENT=0.90
 MEM_OVER="1"
 
 function monitor (){
@@ -21,7 +21,7 @@ function monitor (){
     
     if [[ $MEM_FLAG = $MEM_OVER ]]; then
         speak "memory warnning! Now, clearing memory..."
-        purge
+        sudo purge
         speak "memory cleared"
     fi
 }
